@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { store } from '~/store/features/store'
+import { Provider } from 'react-redux'
+import { Main } from './pages/main'
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello, world!</h1>
-    </div>
-  )
-}
-
-render(<App />, document.body)
+render(
+  <Provider store={store}>
+    <Main />
+  </Provider>,
+  document.body
+)
