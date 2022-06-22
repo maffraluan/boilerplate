@@ -7,8 +7,16 @@ const common = require('./webpack.common')
 const { merge } = require('webpack-merge')
 
 module.exports = merge(
-  {...common },
+  { ...common },
   {
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      pathinfo: false,
+      filename: '[name].js',
+      sourceMapFilename: '[file].map[query]',
+      chunkFilename: '[id].js',
+      publicPath: '/'
+    },
     mode: 'development',
     module: {
       rules: [
@@ -16,24 +24,24 @@ module.exports = merge(
           test: /\.(ts|js)x?$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               presets: [
-                "@babel/preset-env",
-                "@babel/preset-react",
-                "@babel/preset-typescript",
-              ],
-            },
-          },
-        },
-      ],
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript'
+              ]
+            }
+          }
+        }
+      ]
     },
     resolve: {
-      extensions: [".tsx", ".ts", ".js"],
+      extensions: ['.tsx', '.ts', '.js']
     },
     devtool: 'source-map',
     devServer: {
-      static: path.join(__dirname, "public"),
+      static: path.join(__dirname, 'public'),
       compress: true,
       historyApiFallback: true,
       port: 3000
@@ -42,13 +50,14 @@ module.exports = merge(
       new ForkTsCheckerWebpackPlugin({
         async: false,
         typescript: {
-            memoryLimit: 4096,
-            profile: true
-          }
+          memoryLimit: 4096,
+          profile: true
+        }
       }),
       new HtmlWebpackPlugin({
-          inject: true,
-          template: './template.dev.html'
-        })
-    ],
-})
+        inject: true,
+        template: './template.dev.html'
+      })
+    ]
+  }
+)
