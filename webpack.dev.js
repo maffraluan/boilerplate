@@ -18,6 +18,12 @@ module.exports = merge(
       publicPath: '/'
     },
     mode: 'development',
+    watchOptions: {
+      ignored: /node_modules/
+    },
+    externals: {
+      'react': 'React'
+    },
     module: {
       rules: [
         {

@@ -44,7 +44,14 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["/^react/", "module", ["parent", "sibling", "index"]],
+        "groups": [
+          "/^react/", 
+          "module", 
+          "/^@/store/",
+          "/^@/app/infra/",
+          "/^@/app/pages/",
+          "/^@/app/components/",
+           ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": false }
       }
     ]
