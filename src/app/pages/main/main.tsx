@@ -1,6 +1,4 @@
-import React, { useCallback } from 'react'
-
-
+import React from 'react'
 const Main = () => {
 
   return (
@@ -10,4 +8,4 @@ const Main = () => {
     </div>
   )
 }
-export { Main }
+export default Main
