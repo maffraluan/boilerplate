@@ -22,9 +22,9 @@
     "sourceMap": true,
     "inlineSources": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts"],
-  "types": ["node", "jest", "@testing-library/jest-dom"],
+  "types": ["node", "jest", "@testing-library/jest-dom"]
 }

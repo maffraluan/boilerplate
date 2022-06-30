@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const webpack = require('webpack')
 const path = require('path')
 
 const common = require('./webpack.common')
@@ -20,9 +21,6 @@ module.exports = merge(
     mode: 'development',
     watchOptions: {
       ignored: /node_modules/
-    },
-    externals: {
-      'react': 'React'
     },
     module: {
       rules: [
@@ -63,6 +61,9 @@ module.exports = merge(
       new HtmlWebpackPlugin({
         inject: true,
         template: './template.dev.html'
+      }),
+      new webpack.ProvidePlugin({
+        React: 'react'
       })
     ]
   }
