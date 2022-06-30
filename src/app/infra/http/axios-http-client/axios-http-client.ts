@@ -5,7 +5,15 @@ import {
   HttpRequest
 } from '~/app/infra/protocols/http'
 
+type HttpPostParams<T> = {
+  url: string
+  body?: T
+}
+
 export class AxiosHttpClient implements HttpClient {
+  public async post(params: HttpPostParams<any>): Promise<void> {
+    await axios.post(params.url)
+  }
   public async request({
     method,
     url,
@@ -24,7 +32,7 @@ export class AxiosHttpClient implements HttpClient {
     } catch (error: any) {
       axiosResponse = error.response
     }
-    
+
     return {
       statusCode: axiosResponse?.status,
       body: axiosResponse?.data?.body
