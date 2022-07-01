@@ -1,4 +1,3 @@
-import React from 'react'
 import Main from './main'
 import { render } from '@testing-library/react'
 
