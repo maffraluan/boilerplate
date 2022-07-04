@@ -4,7 +4,7 @@ export type CharacterModel = {
   image: string
   species: string
   gender: string
-  episode: [key: string]
+  episode: { [key: string]: string }
   created: string
   status: string
 }
