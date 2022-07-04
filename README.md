@@ -1,3 +1,5 @@
+## Note: This boilerplate is getting building. Files and folder will suffer changes soon.
+
 ### First step: create a file named .env.local in root source.
 
 ```sh
