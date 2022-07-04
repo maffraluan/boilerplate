@@ -1,2 +1,2 @@
 export * from './main'
-export { default as Character } from './components/character/character'
+export { default as Character } from './character/character'
