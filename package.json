@@ -44,6 +44,7 @@
     "babel-jest": "^28.1.1",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "dotenv-webpack": "^7.1.1",
     "eslint": "^8.17.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
