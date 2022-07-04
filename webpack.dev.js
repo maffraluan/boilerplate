@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 const path = require('path')
 
 const common = require('./webpack.common')
@@ -64,6 +65,11 @@ module.exports = merge(
       }),
       new webpack.ProvidePlugin({
         React: 'react'
+      }),
+      new Dotenv({
+        path: './.env.local',
+        safe: true,
+        systemvars: true
       })
     ]
   }
