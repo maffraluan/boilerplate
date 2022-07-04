@@ -36,6 +36,7 @@ baseURL='<API_HERE>'
  ┃ ┃ ┣ 📂features
  ┃ ┃ ┣ 📂types
  ┃ ┃
+ ┣ 📜.babelrc
  ┣ 📜.editorconfig
  ┣ 📜.env.example
  ┣ 📜.eslintrc.json
